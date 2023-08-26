@@ -218,6 +218,10 @@ header[role="header"] nav #menu-button.open span:nth-child(3) {top: 10px;
 
 /*===== main ===*/
 
+.no_top_margin {
+padding-top: 0px;
+}
+
 main[role="main-home-wrapper"],main[role="main-inner-wrapper"] { padding-bottom:90px}
 
 main[role="main-home-wrapper"] article[role="pge-title-content"],main[role="main-inner-wrapper"] article[role="pge-title-content"]{ padding-left:41px}
@@ -349,6 +353,8 @@ article[role="pge-title-content"].contact-header p a:hover{color:#fb5353; text-d
 .work-details p{ font-size:16px; color:#666666; line-height:30px; margin-bottom:20px; font-weight:300}
 
 .work-details p strong{ font-weight:800}
+
+.italic{font-size:16px; color:#FFF; line-height:20px; margin-bottom:0px; font-weight:300; font-style:italic;}
 
 .work-images{ margin-top:46px}
 
