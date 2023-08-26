@@ -168,7 +168,7 @@ a:focus, img:focus, button:focus, .btn:focus {outline: none;}
 
 /*===== Header ===*/
 
-header[role="header"]{ padding-top:80px; padding-bottom:39px}
+header[role="header"]{ padding-top:20px; padding-bottom:39px}
 
 header[role="header"] h1{ padding:0; margin:0}
 
@@ -218,13 +218,9 @@ header[role="header"] nav #menu-button.open span:nth-child(3) {top: 10px;
 
 /*===== main ===*/
 
-.no_top_margin {
-padding-top: 0px;
-}
-
 main[role="main-home-wrapper"],main[role="main-inner-wrapper"] { padding-bottom:90px}
 
-main[role="main-home-wrapper"] article[role="pge-title-content"],main[role="main-inner-wrapper"] article[role="pge-title-content"]{ padding-left:41px}
+main[role="main-home-wrapper"] article[role="pge-title-content"],main[role="main-inner-wrapper"] article[role="pge-title-content"]{ padding-left:0px}
 
 main[role="main-home-wrapper"] article[role="pge-title-content"] header,main[role="main-inner-wrapper"] article[role="pge-title-content"] header{ padding-bottom:19px; padding-top:83px}
 
@@ -233,6 +229,28 @@ main[role="main-home-wrapper"] article[role="pge-title-content"] header h2,main[
 main[role="main-home-wrapper"] article[role="pge-title-content"] header h2 span,main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2 span{ display:block; font-size:80px; color:#fb5353; padding-bottom:15px}
 
 main[role="main-home-wrapper"] article[role="pge-title-content"] p,main[role="main-inner-wrapper"] article[role="pge-title-content"] p{ font-size:20px; line-height:30px; color:#454545}
+
+
+
+/*===== main 2===*/
+
+main[role="main-home-wrapper2"],main[role="main-inner-wrapper2"] { padding-bottom:90px}
+
+main[role="main-home-wrapper2"] article[role="pge-title-content2"],main[role="main-inner-wrapper2"] article[role="pge-title-content2"]{ padding-left:0px}
+
+main[role="main-home-wrapper2"] article[role="pge-title-content2"] header,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] header{ padding-bottom:0px; padding-top:0px}
+
+main[role="main-home-wrapper2"] article[role="pge-title-content2"] header h2,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] header h2{ font-size:46px; line-height:70px; color:#404040; font-weight:800; text-align: right;}
+
+main[role="main-home-wrapper2"] article[role="pge-title-content2"] header h2 span,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] header h2 span{ display:block; font-size:80px; color:#fb5353; padding-bottom:15px}
+
+main[role="main-home-wrapper2"] article[role="pge-title-content2"] p,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] p{ font-size:20px; line-height:30px; color:#454545; text-align: right;}
+
+
+
+
+
+
 
 /*===== footer ===*/
 
@@ -262,27 +280,27 @@ footer[role="footer"] .copy-right{ text-align:center; display:block; font-size:1
 
 /*===== About ===*/
 
-main[role="main-inner-wrapper"] .about-content{ background-color:#fb5353; padding-top:57px; padding-left:70px; padding-right:67px; padding-bottom:58px}
+main[role="main-inner-wrapper2"] .about-content{ background-color:#fb5353; padding-top:57px; padding-left:70px; padding-right:67px; padding-bottom:58px}
 
-main[role="main-inner-wrapper"] .about-content p{ font-size:17px; line-height:30px; color:#FFF; padding-bottom:20px}
+main[role="main-inner-wrapper2"] .about-content p{ font-size:17px; line-height:30px; color:#FFF; padding-bottom:20px}
 
-main[role="main-inner-wrapper"] .thumbnails-pan{ padding-top:30px}
+main[role="main-inner-wrapper2"] .thumbnails-pan{ padding-top:30px}
 
-main[role="main-inner-wrapper"] .thumbnails-pan section figure{ background-color:#FFF; position:relative; overflow:hidden; cursor:pointer}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure{ background-color:#FFF; position:relative; overflow:hidden; cursor:pointer}
 
-main[role="main-inner-wrapper"] .thumbnails-pan section figure,main[role="main-inner-wrapper"] .thumbnails-pan section figure, img,main[role="main-inner-wrapper"] .thumbnails-pan section figure figcaption,section.blog-content figure,section.blog-content figure img,section.blog-content  article{transition-delay: 0s;transition-duration: 0.6s;transition-property: all;transition-timing-function: ease;}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure,main[role="main-inner-wrapper"] .thumbnails-pan section figure, img,main[role="main-inner-wrapper"] .thumbnails-pan section figure figcaption,section.blog-content figure,section.blog-content figure img,section.blog-content  article{transition-delay: 0s;transition-duration: 0.6s;transition-property: all;transition-timing-function: ease;}
 
-main[role="main-inner-wrapper"] .thumbnails-pan section figure figcaption{ position:absolute; bottom:-50%; left:0; right:0; background-color:#fb5353; margin:0 69px; text-align:center; color:#FFF; padding-top:16px; padding-bottom:27px}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure figcaption{ position:absolute; bottom:-50%; left:0; right:0; background-color:#fb5353; margin:0 69px; text-align:center; color:#FFF; padding-top:16px; padding-bottom:27px}
 
-main[role="main-inner-wrapper"] .thumbnails-pan section figure figcaption h3{ font-size:21px; line-height:22px; font-weight:300}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure figcaption h3{ font-size:21px; line-height:22px; font-weight:300}
 
-main[role="main-inner-wrapper"] .thumbnails-pan section figure figcaption h5{ text-transform:uppercase; font-size:13px; line-height:14px; font-weight:bold}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure figcaption h5{ text-transform:uppercase; font-size:13px; line-height:14px; font-weight:bold}
 
-main[role="main-inner-wrapper"] .thumbnails-pan section figure:hover,section.blog-content:hover article{ background-color:#fb5353; color:#FFF}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure:hover,section.blog-content:hover article{ background-color:#fb5353; color:#FFF}
 
-main[role="main-inner-wrapper"] .thumbnails-pan section figure:hover img,section.blog-content:hover figure img{-webkit-transform: scale3d(1.08,1.08,2);transform: scale3d(1.08,1.08,2); opacity:0.5}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure:hover img,section.blog-content:hover figure img{-webkit-transform: scale3d(1.08,1.08,2);transform: scale3d(1.08,1.08,2); opacity:0.5}
 
-main[role="main-inner-wrapper"] .thumbnails-pan section figure:hover figcaption{ bottom:0;}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure:hover figcaption{ bottom:0;}
 
 /*===== Blog ===*/
 
@@ -359,6 +377,31 @@ article[role="pge-title-content"].contact-header p a:hover{color:#fb5353; text-d
 .work-images{ margin-top:46px}
 
 .work-images li{ margin-bottom:50px}
+
+/*== Work Details 2 ==*/
+
+.work-details2{ padding:0 0px; margin-top:73px}
+
+.work-details2 header h2{ color:#343434; font-size:36px; font-weight:800}
+
+.work-details2 header a{ display:inline-block; color:#fb5353; font-size:18px;font-weight:800;padding-top:3px}
+
+.work-details2 header a i{ color:#0d0d0d; padding-left:10px}
+
+.work-details2 header a:hover{ color:#0d0d0d; text-decoration:none}
+
+.work-details2 header a:hover i{ color:#fb5353}
+
+.work-details2 p{ font-size:16px; color:#666666; line-height:30px; margin-bottom:20px; font-weight:400}
+
+.work-details2 p strong{ font-size: 16px; font-weight:800; color: #343434}
+
+.italic{font-size:16px; color:#FFF; line-height:20px; margin-bottom:0px; font-weight:300; font-style:italic;}
+
+.work-images{ margin-top:46px}
+
+.work-images li{ margin-bottom:50px}
+
 
 /*== Blog Details ==*/
 
