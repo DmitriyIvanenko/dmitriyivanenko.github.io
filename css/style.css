@@ -255,13 +255,13 @@ main[role="main-home-wrapper2"] article[role="pge-title-content2"] p,main[role="
 	text-align: center;
 	margin: 20px auto;
 	padding: 10px;
-	border-radius: 8px;
+	border-radius: 6px;
 	border: 1px solid #fb5353;
-	background-color: #fff;
+	background-color: #f6f6f6;
 	transition: .3s;
   }
   #loadMore:hover {
-	color: #fff;
+	color: #f6f6f6;
 	background-color: #fb5353;
 	border: 1px solid transparent;
 	text-decoration: none;
@@ -306,7 +306,7 @@ main[role="main-inner-wrapper2"] .thumbnails-pan section figure{ background-colo
 
 main[role="main-inner-wrapper2"] .thumbnails-pan section figure,main[role="main-inner-wrapper"] .thumbnails-pan section figure, img,main[role="main-inner-wrapper"] .thumbnails-pan section figure figcaption,section.blog-content figure,section.blog-content figure img,section.blog-content  article{transition-delay: 0s;transition-duration: 0.6s;transition-property: all;transition-timing-function: ease;}
 
-main[role="main-inner-wrapper2"] .thumbnails-pan section figure figcaption{ position:absolute; bottom:-50%; left:0; right:0; background-color:#fb5353; margin:0 69px; text-align:center; color:#FFF; padding-top:16px; padding-bottom:27px}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure figcaption{ position:absolute; bottom:-50%; left:0; right:0; background-color:#fb5353; margin:0 69px; text-align:center; color:#ffffff; padding-top:16px; padding-bottom:27px}
 
 main[role="main-inner-wrapper2"] .thumbnails-pan section figure figcaption h3{ font-size:21px; line-height:22px; font-weight:300}
 
