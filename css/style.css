@@ -246,10 +246,26 @@ main[role="main-home-wrapper2"] article[role="pge-title-content2"] header h2 spa
 
 main[role="main-home-wrapper2"] article[role="pge-title-content2"] p,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] p{ font-size:20px; line-height:30px; color:#454545; text-align: right;}
 
+/*===== Button CTA ===*/
 
-
-
-
+  #loadMore {
+	width: 200px;
+	color: #fb5353;
+	display: block;
+	text-align: center;
+	margin: 20px auto;
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid #fb5353;
+	background-color: #fff;
+	transition: .3s;
+  }
+  #loadMore:hover {
+	color: #fff;
+	background-color: #fb5353;
+	border: 1px solid transparent;
+	text-decoration: none;
+  }
 
 
 /*===== footer ===*/
@@ -320,7 +336,7 @@ section.blog-content:hover figure img{ opacity:0.5}
 
 /*===== Contact ===*/
 
-article[role="pge-title-content"].contact-header{ padding-bottom:218px}
+article[role="pge-title-content"].contact-header{ padding-bottom:40px}
 
 article[role="pge-title-content"].contact-header p a{ color:#343434; padding-right:34px}
 
