@@ -218,6 +218,16 @@ header[role="header"] nav #menu-button.open span:nth-child(3) {top: 10px;
 
 /*===== main ===*/
 
+h1 span {
+	font-size: 80px;
+	font-weight: 800;
+	display: block;
+	color: #fb5353;
+}
+
+main[role="main-home-wrapper"] article[role="pge-title-content"] header h2 span,main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2 span{ display:block; font-size:80px; color:#fb5353; padding-bottom:15px}
+
+
 main[role="main-home-wrapper"],main[role="main-inner-wrapper"] { padding-bottom:90px}
 
 main[role="main-home-wrapper"] article[role="pge-title-content"],main[role="main-inner-wrapper"] article[role="pge-title-content"]{ padding-left:0px}
@@ -408,7 +418,7 @@ article[role="pge-title-content"].contact-header p a:hover{color:#fb5353; text-d
 
 .work-details2 header a:hover i{ color:#fb5353}
 
-.work-details2 p{ font-size:16px; color:#666666; line-height:30px; margin-bottom:20px; font-weight:400}
+.work-details2 p{ font-size:18px; color:#666666; line-height:30px; margin-bottom:20px; font-weight:500}
 
 .work-details2 p strong{ font-size: 16px; font-weight:800; color: #343434}
 
