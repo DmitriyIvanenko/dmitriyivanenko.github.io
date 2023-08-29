@@ -225,6 +225,20 @@ h1 span {
 	color: #fb5353;
 }
 
+.about-cv {
+	/* display: block; */
+	background-color: #fb5353;
+	/* width: 100%; */
+	height: 200px;
+	margin: 40px;
+	align-items: center;
+	vertical-align: middle;
+	justify-content: center;
+	display: flex;
+	border-radius: 8px;
+
+}
+
 .features-image {
 	width: 100%;
 	height: 100%;
