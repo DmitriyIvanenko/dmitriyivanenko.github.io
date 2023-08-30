@@ -379,3 +379,17 @@ figure.effect-oscar:hover img {
 	figure.effect-oscar p{ font-size:13px;  padding:2%; display:block; width:90%; margin:0 auto;}
 
 }
+
+
+
+@media (min-width: 2400px) {
+	.features-text {padding-bottom: 20px; padding-top: 0px;}
+	.features-image {padding-bottom: 20px; padding-top: 20px;}
+	
+}
+
+@media (max-width: 768px) {
+	.features-text {padding-bottom: 20px; padding-top: 0px;}
+	.features-image {padding-bottom: 20px; padding-top: 20px;}
+	
+}
