@@ -356,6 +356,10 @@ figure.effect-oscar:hover img {
 
 	.work-images li{margin-bottom:20px}
 
+	h1 span {
+		font-size: 70px;
+	}
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
