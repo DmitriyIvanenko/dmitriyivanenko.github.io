@@ -287,11 +287,11 @@ main[role="main-home-wrapper2"] article[role="pge-title-content2"],main[role="ma
 
 main[role="main-home-wrapper2"] article[role="pge-title-content2"] header,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] header{ padding-bottom:0px; padding-top:0px}
 
-main[role="main-home-wrapper2"] article[role="pge-title-content2"] header h2,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] header h2{ font-size:46px; line-height:70px; color:#404040; font-weight:800; text-align: right;}
+main[role="main-home-wrapper2"] article[role="pge-title-content2"] header h2,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] header h2{ font-size:46px; line-height:70px; color:#404040; font-weight:800; text-align: left;}
 
 main[role="main-home-wrapper2"] article[role="pge-title-content2"] header h2 span,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] header h2 span{ display:block; font-size:80px; color:#fb5353; padding-bottom:15px}
 
-main[role="main-home-wrapper2"] article[role="pge-title-content2"] p,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] p{ font-size:20px; line-height:30px; color:#454545; text-align: right;}
+main[role="main-home-wrapper2"] article[role="pge-title-content2"] p,main[role="main-inner-wrapper2"] article[role="pge-title-content2"] p{ font-size:20px; line-height:30px; color:#454545; text-align: left;}
 
 /*===== Button CTA ===*/
 
@@ -445,7 +445,7 @@ article[role="pge-title-content"].contact-header p a:hover{color:#fb5353; text-d
 
 .work-details2{ padding:0 0px; margin-top:73px}
 
-.work-details2 header h2{ color:#343434; font-size:36px; font-weight:800}
+.work-details2 header h2{ color:#404040; font-size:46px; font-weight:800}
 
 .work-details2 header a{ display:inline-block; color:#fb5353; font-size:18px;font-weight:800;padding-top:3px}
 
@@ -503,6 +503,8 @@ article[role="pge-title-content"].contact-header p a:hover{color:#fb5353; text-d
 .reply-pan li{ border-bottom:none;border-top:2px solid #dedede; padding-bottom:0; margin-bottom:0;padding-top:38px;}
 
 .commentys-form h4{ font-size:24px}
+
+.work-details2 h4{ font-size:21px; color:#fb5353; font-weight:400}
 
 .commentys-form form{ margin-top:30px}
 
