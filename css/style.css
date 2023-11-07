@@ -271,6 +271,8 @@ main[role="main-home-wrapper"] article[role="pge-title-content"],main[role="main
 
 main[role="main-home-wrapper"] article[role="pge-title-content"] header,main[role="main-inner-wrapper"] article[role="pge-title-content"] header{ padding-bottom:19px; padding-top:83px}
 
+main[role="main-home-wrapper"] article[role="pge-title-content"] header,main[role="main-inner-wrapper"] article[role="pge-title-content"] header p:first-child { padding-bottom:0px; padding-top:50px}
+
 main[role="main-home-wrapper"] article[role="pge-title-content"] header h2,main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2{ font-size:46px; line-height:70px; color:#404040; font-weight:800}
 
 main[role="main-home-wrapper"] article[role="pge-title-content"] header h2 span,main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2 span{ display:block; font-size:80px; color:#fb5353; padding-bottom:15px}
