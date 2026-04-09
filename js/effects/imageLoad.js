@@ -26,6 +26,21 @@
     'images/animations/david.mp4'
   ];
 
+  var grid;
+  var loadingElement;
+  var remaining = 0;
+
+  function updateLoadingText() {
+    if (!loadingElement) {
+      return;
+    }
+    if (remaining <= 0) {
+      loadingElement.parentNode && loadingElement.parentNode.removeChild(loadingElement);
+      return;
+    }
+    loadingElement.textContent = 'Loading animations… (' + remaining + ' remaining)';
+  }
+
   function createMediaElement(url, srcUrl) {
     if (url.toLowerCase().endsWith('.mp4')) {
       var video = document.createElement('video');
@@ -54,7 +69,6 @@
   function appendMedia(element) {
     var li = document.createElement('li');
     li.appendChild(element);
-    var grid = document.getElementById('grid');
     if (grid) {
       grid.appendChild(li);
     } else {
@@ -67,10 +81,16 @@
     appendMedia(element);
   }
 
+  function completeOne() {
+    remaining -= 1;
+    updateLoadingText();
+  }
+
   function loadMedia(url) {
     if (!window.fetch) {
       console.warn('Fetch not supported: falling back to direct media URLs');
       fallbackMedia(url);
+      completeOne();
       return Promise.resolve();
     }
 
@@ -85,21 +105,25 @@
       mediaElement.addEventListener('loadeddata', function() {
         URL.revokeObjectURL(objectUrl);
       }, { once: true });
+      appendMedia(mediaElement);
+      completeOne();
       return mediaElement;
     }).catch(function(err) {
       console.warn('Fetch failed for', url, '- falling back to direct URL', err);
       fallbackMedia(url);
+      completeOne();
       return null;
     });
   }
 
   document.addEventListener('DOMContentLoaded', function() {
+    grid = document.getElementById('grid');
+    loadingElement = document.getElementById('animation-loading');
+    remaining = mediaUrls.length;
+    updateLoadingText();
+
     mediaUrls.forEach(function(url) {
-      loadMedia(url).then(function(mediaElement) {
-        if (mediaElement) {
-          appendMedia(mediaElement);
-        }
-      });
+      loadMedia(url);
     });
   });
 })();
