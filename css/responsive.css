@@ -131,3 +131,19 @@
 	
 
 }
+
+/* lg */
+
+@media (min-width: 1200px) {
+
+	header[role="header"] nav ul{
+		text-align:left;
+		width:auto;
+		max-width:420px;
+		right:0;
+		left:auto;
+		padding:0 40px 0 40px;
+		padding-top:0;
+	}
+
+}

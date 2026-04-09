@@ -69,7 +69,7 @@
 
   function createPlaceholder() {
     var li = document.createElement('li');
-    li.className = 'animation-placeholder';
+    li.className = 'animation-placeholder shown';
     var loader = document.createElement('div');
     loader.className = 'animation-placeholder-inner';
     loader.textContent = 'Loading…';
@@ -79,6 +79,7 @@
 
   function replacePlaceholder(placeholder, element) {
     placeholder.classList.remove('animation-placeholder');
+    placeholder.classList.add('shown');
     placeholder.innerHTML = '';
     placeholder.appendChild(element);
   }
@@ -119,7 +120,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    grid = document.getElementById('grid');
+    grid = document.getElementById('animation-grid');
     loadingElement = document.getElementById('animation-loading');
     totalCount = mediaUrls.length;
     loadedCount = 0;
