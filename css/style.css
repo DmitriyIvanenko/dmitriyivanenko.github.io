@@ -434,6 +434,23 @@ article[role="pge-title-content"].contact-header p a:hover{color:#fb5353; text-d
     vertical-align: middle;
 }
 
+.animation-placeholder {
+    min-height: 160px;
+    background-color: #fafafa;
+    border: 1px solid #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    color: #888;
+}
+
+.animation-placeholder-inner {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
 @keyframes loading-spinner {
     to { transform: rotate(360deg); }
 }

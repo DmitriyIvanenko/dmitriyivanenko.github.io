@@ -28,17 +28,18 @@
 
   var grid;
   var loadingElement;
-  var remaining = 0;
+  var totalCount = 0;
+  var loadedCount = 0;
 
   function updateLoadingText() {
     if (!loadingElement) {
       return;
     }
-    if (remaining <= 0) {
+    if (loadedCount >= totalCount) {
       loadingElement.parentNode && loadingElement.parentNode.removeChild(loadingElement);
       return;
     }
-    loadingElement.textContent = 'Loading animations… (' + remaining + ' remaining)';
+    loadingElement.textContent = 'Loading animations… (' + loadedCount + ' / ' + totalCount + ' loaded)';
   }
 
   function createMediaElement(url, srcUrl) {
@@ -66,30 +67,31 @@
     return img;
   }
 
-  function appendMedia(element) {
+  function createPlaceholder() {
     var li = document.createElement('li');
-    li.appendChild(element);
-    if (grid) {
-      grid.appendChild(li);
-    } else {
-      console.error('Grid element not found');
-    }
+    li.className = 'animation-placeholder';
+    var loader = document.createElement('div');
+    loader.className = 'animation-placeholder-inner';
+    loader.textContent = 'Loading…';
+    li.appendChild(loader);
+    return li;
   }
 
-  function fallbackMedia(url) {
-    var element = createMediaElement(url, url);
-    appendMedia(element);
+  function replacePlaceholder(placeholder, element) {
+    placeholder.classList.remove('animation-placeholder');
+    placeholder.innerHTML = '';
+    placeholder.appendChild(element);
   }
 
   function completeOne() {
-    remaining -= 1;
+    loadedCount += 1;
     updateLoadingText();
   }
 
-  function loadMedia(url) {
+  function loadMedia(url, placeholder) {
     if (!window.fetch) {
       console.warn('Fetch not supported: falling back to direct media URLs');
-      fallbackMedia(url);
+      replacePlaceholder(placeholder, createMediaElement(url, url));
       completeOne();
       return Promise.resolve();
     }
@@ -105,12 +107,12 @@
       mediaElement.addEventListener('loadeddata', function() {
         URL.revokeObjectURL(objectUrl);
       }, { once: true });
-      appendMedia(mediaElement);
+      replacePlaceholder(placeholder, mediaElement);
       completeOne();
       return mediaElement;
     }).catch(function(err) {
       console.warn('Fetch failed for', url, '- falling back to direct URL', err);
-      fallbackMedia(url);
+      replacePlaceholder(placeholder, createMediaElement(url, url));
       completeOne();
       return null;
     });
@@ -119,11 +121,16 @@
   document.addEventListener('DOMContentLoaded', function() {
     grid = document.getElementById('grid');
     loadingElement = document.getElementById('animation-loading');
-    remaining = mediaUrls.length;
+    totalCount = mediaUrls.length;
+    loadedCount = 0;
     updateLoadingText();
 
     mediaUrls.forEach(function(url) {
-      loadMedia(url);
+      var placeholder = createPlaceholder();
+      if (grid) {
+        grid.appendChild(placeholder);
+      }
+      loadMedia(url, placeholder);
     });
   });
 })();
