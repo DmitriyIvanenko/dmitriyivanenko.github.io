@@ -409,6 +409,51 @@ article[role="pge-title-content"].contact-header p a:hover{color:#507DC6; text-d
 
 .contat-from-wrapper form ::-moz-placeholder { color:#404040; } /* firefox 19+ */
 
+/* Global image preview loader */
+.image-preview-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-preview-wrap .image-preview-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 14px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #333;
+    background-color: rgba(255,255,255,0.92);
+    transition: opacity 0.25s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.image-preview-wrap .image-preview-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.image-preview-wrap.image-preview-loaded .image-preview-overlay {
+    opacity: 0;
+}
+
+.image-preview-overlay.image-preview-error {
+    color: #a33;
+    background-color: rgba(255,245,245,0.95);
+}
+
+
 .contat-from-wrapper form :-ms-input-placeholder { color:#404040; } /* ie */
 
 .contat-from-wrapper form input:-moz-placeholder { color:#404040; }
