@@ -140,7 +140,9 @@ $(document).ready(function() {
 
 	
 
-	new AnimOnScroll( document.getElementById( 'grid' ), {
+	var animatedGrid = document.getElementById( 'grid' );
+	if ( animatedGrid ) {
+		new AnimOnScroll( animatedGrid, {
 
 				minDuration : 0.4,
 
@@ -149,8 +151,6 @@ $(document).ready(function() {
 				viewportFactor : 0.2
 
 			} );
-
-	
-
+	}
 });
 

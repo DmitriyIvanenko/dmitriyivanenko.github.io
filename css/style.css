@@ -454,6 +454,7 @@ a.link_none:focus {
 
 .animation-placeholder {
     min-height: 160px;
+    aspect-ratio: 4 / 3;
     background-color: transparent;
     border: 1px solid #ebebeb;
     display: flex;
@@ -509,6 +510,7 @@ a.link_none:focus {
     display: block;
     margin-bottom: 20px;
     opacity: 0;
+    background-color: #f7f7f7;
 }
 
 .animation-list li.shown {
@@ -521,7 +523,10 @@ a.link_none:focus {
     outline: none;
     border: none;
     display: block;
+    width: 100%;
+    height: auto;
     max-width: 100%;
+    background-color: #f7f7f7;
 }
 
 @keyframes loading-spinner {

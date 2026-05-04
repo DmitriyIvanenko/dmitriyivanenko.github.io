@@ -21,55 +21,75 @@
     'images/animations/caddi.gif',
     'images/animations/sketch.mp4',
     'images/animations/remco.mp4',
-    'images/animations/sushi.mp4',
     'images/animations/surfing.mp4',
     'images/animations/david.mp4'
   ];
 
   var grid;
   var loadingElement;
-  var totalCount = 0;
   var loadedCount = 0;
+  var initialLoadCount = Math.min(4, mediaUrls.length);
+  var lazyLoadObserver;
+  var playbackObserver;
 
   function updateLoadingText() {
     if (!loadingElement) {
       return;
     }
-    if (loadedCount >= totalCount) {
+    if (loadedCount >= initialLoadCount) {
       loadingElement.parentNode && loadingElement.parentNode.removeChild(loadingElement);
       return;
     }
-    loadingElement.textContent = 'Loading animations… (' + loadedCount + ' / ' + totalCount + ' loaded)';
+    loadingElement.textContent = 'Loading animations… (' + loadedCount + ' / ' + initialLoadCount + ' ready)';
   }
 
-  function createMediaElement(url, srcUrl) {
-    if (url.toLowerCase().endsWith('.mp4')) {
+  function isVideo(url) {
+    return /\.mp4$/i.test(url);
+  }
+
+  function createMediaElement(url) {
+    if (isVideo(url)) {
       var video = document.createElement('video');
       video.autoplay = true;
+      video.defaultMuted = true;
       video.muted = true;
       video.loop = true;
       video.playsInline = true;
-      video.preload = 'auto';
+      video.preload = 'metadata';
       video.className = 'img-responsive';
+      video.setAttribute('autoplay', '');
+      video.setAttribute('muted', '');
+      video.setAttribute('loop', '');
+      video.setAttribute('playsinline', '');
       video.setAttribute('webkit-playsinline', '');
 
       var source = document.createElement('source');
-      source.src = srcUrl;
+      source.src = url;
       source.type = 'video/mp4';
       video.appendChild(source);
+
+      video.addEventListener('ended', function() {
+        video.currentTime = 0;
+        playVideo(video);
+      });
+
       return video;
     }
 
     var img = document.createElement('img');
-    img.src = srcUrl;
+    img.src = url;
     img.alt = '';
     img.className = 'img-responsive';
+    img.loading = 'lazy';
+    img.decoding = 'async';
     return img;
   }
 
-  function createPlaceholder() {
+  function createPlaceholder(url) {
     var li = document.createElement('li');
     li.className = 'animation-placeholder shown';
+    li.setAttribute('data-src', url);
+
     var loader = document.createElement('div');
     loader.className = 'animation-placeholder-inner';
     loader.textContent = 'Loading…';
@@ -89,49 +109,118 @@
     updateLoadingText();
   }
 
-  function loadMedia(url, placeholder) {
-    if (!window.fetch) {
-      console.warn('Fetch not supported: falling back to direct media URLs');
-      replacePlaceholder(placeholder, createMediaElement(url, url));
+  function markReadyOnce(element) {
+    var isReady = false;
+    var readyEvent = element.tagName === 'VIDEO' ? 'loadeddata' : 'load';
+    var fallbackTimer = setTimeout(markReady, 4000);
+
+    function markReady() {
+      if (isReady) {
+        return;
+      }
+      isReady = true;
+      clearTimeout(fallbackTimer);
       completeOne();
-      return Promise.resolve();
     }
 
-    return fetch(url).then(function(response) {
-      if (!response.ok) {
-        throw new Error('Network response was not ok for ' + url);
-      }
-      return response.blob();
-    }).then(function(blob) {
-      var objectUrl = URL.createObjectURL(blob);
-      var mediaElement = createMediaElement(url, objectUrl);
-      mediaElement.addEventListener('loadeddata', function() {
-        URL.revokeObjectURL(objectUrl);
-      }, { once: true });
-      replacePlaceholder(placeholder, mediaElement);
-      completeOne();
-      return mediaElement;
-    }).catch(function(err) {
-      console.warn('Fetch failed for', url, '- falling back to direct URL', err);
-      replacePlaceholder(placeholder, createMediaElement(url, url));
-      completeOne();
-      return null;
-    });
+    element.addEventListener(readyEvent, markReady, { once: true });
+    element.addEventListener('error', markReady, { once: true });
+  }
+
+  function playVideo(video) {
+    if (!video || video.tagName !== 'VIDEO') {
+      return;
+    }
+
+    var playPromise = video.play();
+    if (playPromise && playPromise.catch) {
+      playPromise.catch(function() {
+        // Muted inline videos usually autoplay; if a browser blocks one, the poster frame still remains visible.
+      });
+    }
+  }
+
+  function loadMedia(placeholder) {
+    if (!placeholder || placeholder.getAttribute('data-loaded') === 'true') {
+      return;
+    }
+
+    placeholder.setAttribute('data-loaded', 'true');
+
+    var url = placeholder.getAttribute('data-src');
+    var mediaElement = createMediaElement(url);
+    markReadyOnce(mediaElement);
+    replacePlaceholder(placeholder, mediaElement);
+
+    if (mediaElement.tagName === 'VIDEO') {
+      playVideo(mediaElement);
+    }
+  }
+
+  function setPlayback(placeholder, shouldPlay) {
+    var video = placeholder.querySelector('video');
+    if (!video) {
+      return;
+    }
+
+    if (shouldPlay) {
+      playVideo(video);
+    } else {
+      video.pause();
+    }
+  }
+
+  function observeItem(placeholder, index) {
+    if (lazyLoadObserver) {
+      lazyLoadObserver.observe(placeholder);
+    }
+
+    if (playbackObserver) {
+      playbackObserver.observe(placeholder);
+    }
+
+    if (!lazyLoadObserver || index < initialLoadCount) {
+      loadMedia(placeholder);
+    }
   }
 
   document.addEventListener('DOMContentLoaded', function() {
     grid = document.getElementById('animation-grid');
     loadingElement = document.getElementById('animation-loading');
-    totalCount = mediaUrls.length;
     loadedCount = 0;
     updateLoadingText();
 
-    mediaUrls.forEach(function(url) {
-      var placeholder = createPlaceholder();
-      if (grid) {
-        grid.appendChild(placeholder);
-      }
-      loadMedia(url, placeholder);
+    if (!grid) {
+      return;
+    }
+
+    if ('IntersectionObserver' in window) {
+      lazyLoadObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
+            loadMedia(entry.target);
+            lazyLoadObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '700px 0px',
+        threshold: 0.01
+      });
+
+      playbackObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          setPlayback(entry.target, entry.isIntersecting || entry.intersectionRatio > 0);
+        });
+      }, {
+        rootMargin: '150px 0px',
+        threshold: 0.01
+      });
+    }
+
+    mediaUrls.forEach(function(url, index) {
+      var placeholder = createPlaceholder(url);
+      grid.appendChild(placeholder);
+      observeItem(placeholder, index);
     });
   });
 })();
