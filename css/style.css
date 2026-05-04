@@ -54,7 +54,7 @@ html {
 
 .hero-bg {
 	display: block;
-	position: absolute;
+	position: absolute !important; 
 	z-index: -1000;
 	left: 0;
 	right: 0;
