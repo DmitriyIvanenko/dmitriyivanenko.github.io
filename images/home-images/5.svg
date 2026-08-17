@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 41 39" style="enable-background:new 0 0 41 39;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#507DC5;stroke-width:5.9999;stroke-miterlimit:9.9999;}
-	.st1{fill:#507DC5;}
-</style>
-<rect x="9.8" y="8.8" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.7844 20.2069)" class="st0" width="21.4" height="21.4"/>
-<rect x="18.3" y="17.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.7844 20.2069)" class="st1" width="4.4" height="4.4"/>
+<svg width="41" height="39" viewBox="0 0 41 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1205_76)">
+<path d="M20.4996 4.36785L5.36768 19.4998L20.4996 34.6317L35.6316 19.4998L20.4996 4.36785Z" fill="white" stroke="#404040" stroke-width="5.9999" stroke-miterlimit="9.9999"/>
+<path d="M20.4997 16.3885L17.3884 19.4998L20.4997 22.611L23.6109 19.4998L20.4997 16.3885Z" fill="#404040"/>
+</g>
+<defs>
+<clipPath id="clip0_1205_76">
+<rect width="41" height="39" fill="white"/>
+</clipPath>
+</defs>
 </svg>

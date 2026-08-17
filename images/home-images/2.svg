@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 41 39" style="enable-background:new 0 0 41 39;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#507DC5;stroke-width:6;stroke-miterlimit:10;}
-</style>
-<polygon class="st0" points="20.6,7.1 24.9,15.7 34.4,17.1 27.5,23.8 29.2,33.3 20.6,28.9 12.1,33.3 13.7,23.8 6.9,17.1 16.4,15.7 
-	"/>
+<svg width="41" height="39" viewBox="0 0 41 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1205_69)">
+<path d="M20.5999 7.10001L24.8999 15.7L34.3999 17.1L27.4999 23.8L29.1999 33.3L20.5999 28.9L12.0999 33.3L13.6999 23.8L6.8999 17.1L16.3999 15.7L20.5999 7.10001Z" fill="white" stroke="#404040" stroke-width="6" stroke-miterlimit="10"/>
+</g>
+<defs>
+<clipPath id="clip0_1205_69">
+<rect width="41" height="39" fill="white"/>
+</clipPath>
+</defs>
 </svg>
