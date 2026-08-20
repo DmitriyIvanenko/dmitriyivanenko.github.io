@@ -436,6 +436,16 @@ section.blog-content:hover figure img{ opacity:0.5}
 
 article[role="pge-title-content"].contact-header{ padding-bottom:40px}
 
+article[role="pge-title-content"].contact-header h2 span {
+	background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+	background-size: 200% auto;
+	background-position: left center;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: title-gradient 3s ease-in-out infinite alternate;
+}
+
 article[role="pge-title-content"].contact-header p a{ color:#343434; padding-right:34px}
 
 article[role="pge-title-content"].contact-header p a:hover{color:#404040; text-decoration:none}
