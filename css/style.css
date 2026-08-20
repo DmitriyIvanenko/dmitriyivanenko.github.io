@@ -404,7 +404,7 @@ main[role="main-inner-wrapper2"] .thumbnails-pan section figure{ background-colo
 
 main[role="main-inner-wrapper2"] .thumbnails-pan section figure,main[role="main-inner-wrapper"] .thumbnails-pan section figure, img,main[role="main-inner-wrapper"] .thumbnails-pan section figure figcaption,section.blog-content figure,section.blog-content figure img,section.blog-content  article{transition-delay: 0s;transition-duration: 0.6s;transition-property: all;transition-timing-function: ease;}
 
-main[role="main-inner-wrapper2"] .thumbnails-pan section figure figcaption{ position:absolute; bottom:-50%; left:0; right:0; background-color:#404040; margin:0 69px; text-align:center; color:#ffffff; padding-top:16px; padding-bottom:27px}
+main[role="main-inner-wrapper2"] .thumbnails-pan section figure figcaption{ position:absolute; bottom:-50%; left:0; right:0; background-image:linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%); background-size:200% auto; background-position:left center; margin:0 69px; text-align:center; color:#ffffff; padding-top:16px; padding-bottom:27px}
 
 main[role="main-inner-wrapper2"] .thumbnails-pan section figure figcaption h3{ font-size:21px; line-height:22px; font-weight:300}
 
