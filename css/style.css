@@ -253,7 +253,10 @@ h1 span {
 }
 
 .about-cv {
-	background-color: #404040;
+	background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+	background-size: 200% auto;
+	background-position: left center;
+	transition: background-position .6s ease;
 	height: 200px;
 	margin: 40px;
 	align-items: center;
@@ -266,7 +269,7 @@ h1 span {
 
 .about-cv:hover,
 a:hover .about-cv {
-	background-color: #606060;
+	background-position: right center;
 }
 
 .features-image {
@@ -333,20 +336,21 @@ main[role="main-home-wrapper2"] article[role="pge-title-content2"] p,main[role="
 
   #loadMore {
 	width: 200px;
-	color: #404040;
+	color: #fff;
 	display: block;
 	text-align: center;
 	margin: 20px auto;
 	padding: 10px;
 	border-radius: 6px;
-	border: 1px solid #404040;
-	background-color: #f6f6f6;
-	transition: .3s;
+	border: 1px solid transparent;
+	background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+	background-size: 200% auto;
+	background-position: left center;
+	transition: background-position .3s ease;
   }
   #loadMore:hover {
-	color: #f6f6f6;
-	background-color: #404040;
-	border: 1px solid transparent;
+	color: #fff;
+	background-position: right center;
 	text-decoration: none;
   }
 
