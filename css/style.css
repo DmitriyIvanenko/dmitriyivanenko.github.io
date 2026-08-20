@@ -249,7 +249,18 @@ h1 span {
 	font-size: 80px;
 	font-weight: 800;
 	display: block;
-	color: #404040;
+	background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+	background-size: 200% auto;
+	background-position: left center;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: title-gradient 3s ease-in-out infinite alternate;
+}
+
+@keyframes title-gradient {
+	from { background-position: left center; }
+	to { background-position: right center; }
 }
 
 .about-cv {
