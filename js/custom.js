@@ -2,6 +2,12 @@
 
 // JavaScript Document
 
+$(function() {
+	$('.flags-track').each(function() {
+		$(this).append($(this).children().clone());
+	});
+});
+
 $('#subscribeform').submit(function(){
 
 

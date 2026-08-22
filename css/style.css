@@ -308,6 +308,65 @@ a:hover .about-cv {
 	display: flex;
 }
 
+.flags-track > div {
+	display: flex;
+	align-items: center;
+	flex: 0 0 10%;
+	width: auto;
+	float: none;
+	min-width: 0;
+}
+
+.flags-section {
+	display: flex;
+	overflow: hidden;
+	margin-top: 40px;
+	animation: flags-slide-in 1s ease-out both;
+}
+
+.flags-track {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 200%;
+	gap: 40px;
+	animation: flags-marquee 12s linear infinite;
+}
+
+@keyframes flags-marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-50% - 20px));
+	}
+}
+
+.flags-section .flags-image {
+	width: auto;
+	height: auto;
+	padding: 0 12px 0 0;
+	display: flex;
+	align-items: center;
+}
+
+.flags-section .flags-image img {
+	width: 48px;
+	height: auto;
+}
+
+.flags-section .flags-text {
+	padding: 0;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+
+.flags-section .flags-text p {
+	margin: 0;
+	line-height: 1;
+}
+
 
 main[role="main-home-wrapper"] article[role="pge-title-content"] header h2 span,main[role="main-inner-wrapper"] article[role="pge-title-content"] header h2 span{ display:block; font-size:80px; color:#404040; padding-bottom:15px; }
 

@@ -52,6 +52,15 @@
 
 @media (max-width: 767px) {
 
+	.features-section {
+		margin-top: 40px;
+	}
+
+	.features-section > div {
+		width: 50%;
+		float: left;
+	}
+
 	header[role="header"]{ padding:8% 0;}
 
 	header[role="header"] nav ul{ padding-top:10%}
