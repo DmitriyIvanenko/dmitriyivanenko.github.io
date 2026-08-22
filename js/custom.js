@@ -4,7 +4,18 @@
 
 $(function() {
 	$('.flags-track').each(function() {
-		$(this).append($(this).children().clone());
+		var track = $(this);
+
+		if (track.children('.flags-set').length) {
+			return;
+		}
+
+		var flagSet = $('<div class="flags-set"></div>').append(track.children().detach());
+		var setWidth = track.parent().innerWidth();
+
+		track.append(flagSet, flagSet.clone(true));
+		track.css('--flags-set-width', setWidth + 'px');
+		track.addClass('is-ready');
 	});
 });
 

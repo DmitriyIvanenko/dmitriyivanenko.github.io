@@ -308,28 +308,33 @@ a:hover .about-cv {
 	display: flex;
 }
 
-.flags-track > div {
+.flags-set > div {
 	display: flex;
 	align-items: center;
-	flex: 0 0 10%;
+	flex: 1 1 0;
 	width: auto;
 	float: none;
 	min-width: 0;
+	margin-right: 60px;
 }
 
 .flags-section {
 	display: flex;
 	overflow: hidden;
 	margin-top: 40px;
-	animation: flags-slide-in 1s ease-out both;
 }
 
 .flags-track {
 	display: flex;
 	flex-wrap: nowrap;
-	width: 200%;
-	gap: 40px;
-	animation: flags-marquee 12s linear infinite;
+	width: max-content;
+	animation: flags-marquee 10s linear infinite;
+}
+
+.flags-set {
+	display: flex;
+	flex: 0 0 var(--flags-set-width);
+	width: var(--flags-set-width);
 }
 
 @keyframes flags-marquee {
@@ -337,7 +342,7 @@ a:hover .about-cv {
 		transform: translateX(0);
 	}
 	to {
-		transform: translateX(calc(-50% - 20px));
+		transform: translateX(-50%);
 	}
 }
 
