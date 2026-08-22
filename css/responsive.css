@@ -61,6 +61,10 @@
 		float: left;
 	}
 
+	main[role="main-inner-wrapper2"] .thumbnails-pan section:nth-child(n+2) {
+		margin-top: 30px;
+	}
+
 	header[role="header"]{ padding:8% 0;}
 
 	header[role="header"] nav ul{ padding-top:10%}
